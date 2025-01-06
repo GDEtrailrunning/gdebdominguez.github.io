@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title> GDE - Trail Running</title>  
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="gde1.png" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+<div class="container">
+    <div class="main-container">
+    <div class="column-container 1">     
+        <img class="imagen-chica" src="Montaña blanco.png" alt="Montaña Blanco">
+        </div>
+    <div class="column-container 2">     
+        <h1><br><br>PROGRAMA DE ENTRENAMIENTO GDE <br> TRAIL RUNNING <br>Alumno: Bianca Dominguez</h1>
+    </div>
+</div>
+        <h2>OBJETIVO MENSUAL: Mejorar la cadencia y el control dinámico.</h2>
+        <h2>FASE: Adquisición.</h2>
+        <h2 id ="pageTitle"> PRÓXIMA CARRERA Aconcagua 50km: 2025/02/22 </h2>
+        <h2 id="result"></h2> 
+        
+
+    <div class="sub-container">
+        <h4>SEMANA 1
+            <br>Objetivo semanal: Apretar en los falsos llanos y llanos. </br>
+        </h4>
+        <p>Entrada en calor </p>   
+        <p> 4 vueltas x 12 repeticiones </p>
+        <div class="image-container">  
+            <video width="100%" class="responsive-video" style="margin-top: 35px;" controls>            
+            <source src="Video1.mp4" type="video/mp4">
+            </video>
+        </div>  
+        <div class="image-container">  
+            <video width="100%"  class="responsive-video" style="margin-top: 35px;" controls>
+            <source src="Video2.mp4" type="video/mp4">
+            </video>
+        </div>       
+        <div><p> Running </p>
+        </div>    
+    <div class="column-container 1">           
+        <div class="column">            
+            <h3>Dia 1
+            <br> Martes: 18 km trail Arco. </h3>
+            <p> -4 km fuertes. </p>
+            <p> -9 km bajas pulsaciones. </p>
+            <p> -5 km de menor a mayor. </p>
+        </div>
+        <div class="column">            
+            <h3>Dia 2 
+            <br> Jueves mañana: 4 km en el mejor tiempo posible. </h3>
+            <h3> Jueves tarde: 12 km trail Parque de Montaña. </h3>
+            <p> -2 km ágiles x senderos bajos. </p>
+            <p> -7 km, 3' fuertes x 1'30" suaves. </p>
+            <p> -3 km, 20" fuertes x 20" suaves. </p>
+        </div>
+        <div class="column">      
+            <h3>Dia 3
+            <br> Viernes mañana: 4 km calle (por debajo de 4:15). </h3>
+            <h3> Viernes tarde: 12 km trail Parque de Montaña, series triangulares. </h3>
+            <p> -2 km menor a mayor por senderos bajos. </p>
+            <p> -3 km, 10 series x 300m subiendo Filo Sur x 30" pausa pasiva. </p>
+            <p> -3 km, 10 series x 300m bajando x 30" pausa pasiva. </p>
+            <p> -4 km buenas sensaciones. </p>
+        </div>      
+        <div class="column">
+            <h3>Dia 4 
+            <br> Sábado: 28 km trail Arco, "fondo de pasadas". </h3>
+            <p> -3 km fuertes. </p>
+            <p> -3 km, 45" fuertes x 45" ágiles. </p>
+            <p> -12 km, 3' subiendo fuerte x 30" bajando fuerte. </p>
+            <p> -4 km buenas sensaciones. </p>
+            <p> -3 km sensaciones incómodas. </p>
+            <p> -3 km, 3' ágiles x 2' suaves. </p>
+        </div>
+        <div class="column">
+            <h3>Dia 5
+            <br> Lunes: 17 km trail, "pasadas circulares en subida". </h3>
+            <p> -2 km fuertes. </p>
+            <p> -3 km, 200m ágiles x 100m suaves. </p>
+            <p> -8 km, 300m fuertes subiendo x 100m bajando suave x 300m fuertes subiendo. </p>
+            <p> -2 km ágiles. </p>
+            <p> -2 km fuertes. </p>
+        </div>
+    </div>
+
+        <div class="small-paragraph-container">
+            <p> Método de recuperación </p>
+            <p> - Elongación de posterior parado (12 series x 8" x pierna). </p>     
+        </div>  
+
+        <div class="image-container">  
+            <video width="100%"  class="responsive-video" style="margin-top: 35px;" controls>
+            <source src="Video3.mp4" type="video/mp4">
+            </video>
+        </div>  
+                        
+        <div id="column-container 1">
+        <canvas id="myChart-line-1"></canvas>
+        </div>
+    </div>
+        
+    <div class="sub-container">
+        <h4>SEMANA 2
+        <br>Objetivo semanal: Mantener la cadencia en subida. </br>
+            </h4>   
+        <p>Entrada en calor </p>   
+        <p> 4 vueltas x 12 repeticiones </p>            
+        <div class="image-container">  
+            <video width="100%" class="responsive-video" style="margin-top: 35px;" controls>            
+            <source src="Video4.mp4" type="video/mp4">
+            </video>
+        </div>
+        <div class="image-container">  
+            <video width="100%"  class="responsive-video" style="margin-top: 35px;" controls>
+            <source src="Video5.mp4" type="video/mp4">
+            </video>
+        </div>
+      
+        <div><p> Running </p>
+        </div>
+        <div class="column-container 1">           
+            <div class="column">
+                <h3>Dia 1
+                <br> Martes: 11 km trail Arco. </h3>
+                <p> -3 km de menor a mayor, Arco. </p>
+                <p> -3 km, 3' fuertes x 5' suaves. </p>
+                <p> -3 km sensaciones incómodas x río seco. </p>
+                <p> -2 km, 45" suaves x 45" ágiles. </p>
+            </div>
+            <div class="column">
+                <h3>Dia 2
+                <br> Jueves mañana: 5 km calle (por debajo de 5). </h3>
+                <h3> Jueves tarde: 15 km trail mixto, Parque + Parque de Montaña. </h3>
+                <p> -3 km fuertes x senderos bajos. </p>
+                <p> -6 km, 500m suaves x 500m ágiles x Llorón + 7 colinas (alternando). </p>
+                <p> -4 km, 7 colinas subida fuerte con frenos cada 20m. </p>
+                <p> -2 km de mayor a menor. </p>
+            </div>
+            <div class="column">
+                <h3>Dia 3 
+                <br> Viernes mañana: 4 km calle, lo más fuerte posible. </h3>
+                <h3> Viernes tarde: 15 km trail Parque de Montaña "series triangulares". </h3>
+                <p> -2 km ágiles. </p>
+                <p> -3 km, 10 series x 300m subida fuerte x pausa pasiva 1'. </p>
+                <p> -3 km, 10 series x 300m bajada fuerte x pausa pasiva 1'50". </p>
+                <p> -5 km ágiles. </p>
+                <p> -2 km bajas pulsaciones. </p>
+            </div> 
+            <div class="column">
+                <h3>Dia 4 
+                <br> Sábado: 17 km trail Arco "pasadas circulares". </h3>
+                <p> -3 km fuerte subiendo. </p>
+                <p> -3 km ágiles bajando. </p>
+                <p> -3 km, 4 series x 300m fuertes x 100m ágiles x 300m fuertes x 100m ágiles. </p>
+                <p> -3 km buenas sensaciones bajando. </p>
+                <p> -2 km, 2 series x 400m fuertes x 100m ágiles x 400m fuertes x 100m ágiles. </p>
+                <p> -3 km buenas sensaciones. </p>
+            </div> 
+            <div class="column">
+                <h3>Dia 5
+                <br> Lunes: 11 km trail Arco. </h3>
+                <p> -2 km fuertes. </p>
+                <p> -3 km, 30" ágiles x 30" suaves. </p>
+                <p> -4 km sensaciones incómodas. </p>
+                <p> -2 km buenas sensaciones. </p>
+            </div>
+        </div>
+
+        <div class="small-paragraph-container">
+            <p> - Elongación de posterior parado (12 series x 6" x pierna). </p>
+        </div>
+        
+        <div class="image-container">  
+            <video width="100%"  class="responsive-video" style="margin-top: 35px;" controls>
+            <source src="Video6.mp4" type="video/mp4">
+            </video>
+        </div> 
+
+        <div id="column-container 1">
+        <canvas id="myChart-line-2"></canvas>
+        </div>      
+    </div>
+
+    <script src="script.js"></script>
+</div>     
+</body>
+</html>
