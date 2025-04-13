@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
   actualizarDiasRestantes();
   setInterval(actualizarDiasRestantes, 24*60*60*1000); // Actualizar diario
-  //Datos para el gráfico de líneas
+  // Datos para el gráfico de líneas
 const dataLine1 = {
-  labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5'], // Etiquetas de los días
+  labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'], // Etiquetas de los días
   datasets: [{
-    label: 'Km recorridos en Semana 13',
-    data: [15, 17, 12, 18, 24], // Datos de los km recorridos en cada día
+    label: 'Km recorridos en Semana 15',
+    data: [18, 17, 21, 20, 28], // Datos de los km recorridos en cada día
     borderColor: 'rgba(75, 192, 192, 1)',
     fill: true,
     tension: 0.1
@@ -16,19 +16,15 @@ const dataLine1 = {
 const dataLine2 = {
   labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5'], // Etiquetas de los días
   datasets: [{
-    label: 'Km recorridos en Semana 14',
-    data: [14, 22, 18, 20, 27, ], // Datos de los km recorridos en cada día
+    label: 'Km recorridos en Semana 16',
+    data: [14, 22, 19, 13, 20], // Datos de los km recorridos en cada día
     borderColor: 'rgba(153, 102, 255, 1)',
     fill: true,
     tension: 0.1
   }]
 };
-
 // Configuración del gráfico de líneas
-
-
-// Seleccione los contextos de los <canvas> y cree los gráficos
-const myChartLine1 = new Chart(document.getElementById('myChart-line-1'), {
+const configLine = {
   type: 'line',
   data: dataLine1, // Puede cambiar esto a dataLine2 para mostrar el gráfico de la segunda sección
   options: {
@@ -38,9 +34,11 @@ const myChartLine1 = new Chart(document.getElementById('myChart-line-1'), {
       }
     }
   }
-});
+};
 
- const myChartLine2 = new Chart(document.getElementById('myChart-line-2'), {
+// Seleccione los contextos de los <canvas> y cree los gráficos
+const myChartLine1 = new Chart(document.getElementById('myChart-line-1'), configLine);
+const myChartLine2 = new Chart(document.getElementById('myChart-line-2'), {
   type: 'line',
   data: dataLine2,
   options: {
@@ -51,6 +49,7 @@ const myChartLine1 = new Chart(document.getElementById('myChart-line-1'), {
     }
   }
 });
+
 
 function actualizarDiasRestantes() {
   // Obtener el título que contiene la fecha objetivo
