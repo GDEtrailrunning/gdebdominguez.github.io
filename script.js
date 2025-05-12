@@ -5,8 +5,8 @@ document.addEventListener("DOMContentLoaded", function () {
 const dataLine1 = {
   labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'], // Etiquetas de los días
   datasets: [{
-    label: 'Km recorridos en Semana 17',
-    data: [6, 7, 5, 42], // Datos de los km recorridos en cada día
+    label: 'Km recorridos en Semana 19',
+    data: [19, 13, 25, 14, 35],// Datos de los km recorridos en cada día
     borderColor: 'rgba(75, 192, 192, 1)',
     fill: true,
     tension: 0.1
@@ -16,8 +16,8 @@ const dataLine1 = {
 const dataLine2 = {
   labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5'], // Etiquetas de los días
   datasets: [{
-    label: 'Km recorridos en Semana 16',
-    data: [10, 11, 10, 14, 17], // Datos de los km recorridos en cada día
+    label: 'Km recorridos en Semana 20',
+    data: [17, 21, 25, 10, 28], // Datos de los km recorridos en cada día
     borderColor: 'rgba(153, 102, 255, 1)',
     fill: true,
     tension: 0.1
