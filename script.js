@@ -1,12 +1,12 @@
 document.addEventListener("DOMContentLoaded", function () {
-  actualizarDiasRestantes();
-  setInterval(actualizarDiasRestantes, 24*60*60*1000); // Actualizar diario
-  //Datos para el gráfico de líneas
+  //actualizarDiasRestantes();
+  //setInterval(actualizarDiasRestantes, 24*60*60*1000); // Actualizar diario
+  // Datos para el gráfico de líneas
 const dataLine1 = {
   labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5'], // Etiquetas de los días
   datasets: [{
-    label: 'Km recorridos en Semana 23',
-    data: [12, 11, 11, 12, 14], // Datos de los km recorridos en cada día
+    label: 'Km recorridos en Semana 25',
+    data: [15, 21, 16, 14, 34],// Datos de los km recorridos en cada día
     borderColor: 'rgba(75, 192, 192, 1)',
     fill: true,
     tension: 0.1
@@ -14,21 +14,17 @@ const dataLine1 = {
 };
 
 const dataLine2 = {
-  labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'], // Etiquetas de los días
+  labels: ['Día 1', 'Día 2', 'Día 3', 'Dí0a 4', 'Día 5'], // Etiquetas de los días
   datasets: [{
-    label: 'Km recorridos en Semana 24',
-    data: [5, 4, 5, 50], // Datos de los km recorridos en cada día
+    label: 'Km recorridos en Semana 26',
+    data: [14, 14, 13, 14, 25], // Datos de los km recorridos en cada día
     borderColor: 'rgba(153, 102, 255, 1)',
     fill: true,
     tension: 0.1
   }]
 };
-
 // Configuración del gráfico de líneas
-
-
-// Seleccione los contextos de los <canvas> y cree los gráficos
-const myChartLine1 = new Chart(document.getElementById('myChart-line-1'), {
+const configLine = {
   type: 'line',
   data: dataLine1, // Puede cambiar esto a dataLine2 para mostrar el gráfico de la segunda sección
   options: {
@@ -38,9 +34,11 @@ const myChartLine1 = new Chart(document.getElementById('myChart-line-1'), {
       }
     }
   }
-});
+};
 
- const myChartLine2 = new Chart(document.getElementById('myChart-line-2'), {
+// Seleccione los contextos de los <canvas> y cree los gráficos
+const myChartLine1 = new Chart(document.getElementById('myChart-line-1'), configLine);
+const myChartLine2 = new Chart(document.getElementById('myChart-line-2'), {
   type: 'line',
   data: dataLine2,
   options: {
@@ -51,6 +49,7 @@ const myChartLine1 = new Chart(document.getElementById('myChart-line-1'), {
     }
   }
 });
+
 
 function actualizarDiasRestantes() {
   // Obtener el título que contiene la fecha objetivo
@@ -108,5 +107,15 @@ function actualizarDiasRestantes() {
   document.getElementById("Semana 1").appendChild(video2);
   document.getElementById("Semana 2").appendChild(video3);
   document.getElementById("Semana 2").appendChild(video4);
+
+  audios.forEach(audio => {
+    audio.addEventListener("play", () => {
+      audios.forEach(otherAudio => {
+        if (otherAudio !== audio) {
+          otherAudio.pause();
+        }
+      });
+    });
+  });
 
 });
