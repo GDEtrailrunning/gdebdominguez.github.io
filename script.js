@@ -1,112 +1,61 @@
 document.addEventListener("DOMContentLoaded", function () {
   actualizarDiasRestantes();
-  setInterval(actualizarDiasRestantes, 24*60*60*1000); // Actualizar diario
-  //Datos para el gráfico de líneas
-const dataLine1 = {
-  labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5'], // Etiquetas de los días
-  datasets: [{
-    label: 'Km recorridos en Semana 35',
-    data: [14, 20, 16, 14, 27], // Datos de los km recorridos en cada día
-    borderColor: 'rgba(75, 192, 192, 1)',
-    fill: true,
-    tension: 0.1
-  }]
-};
+  setInterval(actualizarDiasRestantes, 24 * 60 * 60 * 1000); // actualizar diario
 
-const dataLine2 = {
-  labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'], // Etiquetas de los días
-  datasets: [{
-    label: 'Km recorridos en Semana 36',
-    data: [19, 12, 15, 11, 30], // Datos de los km recorridos en cada día
-    borderColor: 'rgba(153, 102, 255, 1)',
-    fill: true,
-    tension: 0.1
-  }]
-};
+  // --- Datos ---
+  const dataLine1 = {
+    labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5'],
+    datasets: [{
+      label: 'Km recorridos en Semana 36',
+      data: [10, 14, 12, 12, 21],
+      borderColor: 'rgba(75, 192, 192, 1)',
+      fill: true,
+      tension: 0.1
+    }]
+  };
 
-// Configuración del gráfico de líneas
+  const dataLine2 = {
+    labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'],
+    datasets: [{
+      label: 'Km recorridos en Semana 37',
+      data: [9, 15, 7, 11],
+      borderColor: 'rgba(153, 102, 255, 1)',
+      fill: true,
+      tension: 0.1
+    }]
+  };
 
+  const dataLine3 = {
+    labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'],
+    datasets: [{
+      label: 'Km recorridos en Semana 38',
+      data: [6, 5, 5, 80],
+      borderColor: 'rgba(255, 99, 132, 1)',
+      fill: true,
+      tension: 0.1
+    }]
+  };
 
-// Seleccione los contextos de los <canvas> y cree los gráficos
-const myChartLine1 = new Chart(document.getElementById('myChart-line-1'), {
-  type: 'line',
-  data: dataLine1, // Puede cambiar esto a dataLine2 para mostrar el gráfico de la segunda sección
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
+  // --- Configuración base ---
+  const baseConfig = {
+    type: 'line',
+    options: { scales: { y: { beginAtZero: true } } }
+  };
+
+  // --- Crear gráficos ---
+  new Chart(document.getElementById('myChart-line-1'), { ...baseConfig, data: dataLine1 });
+  new Chart(document.getElementById('myChart-line-2'), { ...baseConfig, data: dataLine2 });
+  new Chart(document.getElementById('myChart-line-3'), { ...baseConfig, data: dataLine3 });
+
+  // --- Función de cuenta regresiva ---
+  function actualizarDiasRestantes() {
+    const pageTitle = document.getElementById('pageTitle').innerText;
+    // Separa después de ":" → asegura que tenés la fecha
+    const objetivoDate = new Date(pageTitle.split(": ")[1]);
+    const currentDate = new Date();
+    const timeDiff = objetivoDate - currentDate;
+    const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
+    document.getElementById('result').textContent =
+      `Faltan ${daysDiff} días para llegar a la carrera.`;
   }
-});
-
- const myChartLine2 = new Chart(document.getElementById('myChart-line-2'), {
-  type: 'line',
-  data: dataLine2,
-  options: {
-    scales: {
-      y: {
-        beginAtZero: true
-      }
-    }
-  }
-});
-
-function actualizarDiasRestantes() {
-  // Obtener el título que contiene la fecha objetivo
-  const pageTitle =  document.getElementById('pageTitle').innerText;
-    
-  // Extraer la fecha de la cadena del título
-  const objetivoDate = new Date(pageTitle.split(": ")[1]);
-
-  // Obtener la fecha actual
-  const currentDate = new Date();
-
-  // Calcular la diferencia en milisegundos entre las dos fechas
-  const timeDiff = objetivoDate - currentDate;
-
-  // Calcular la cantidad de días
-  const daysDiff = Math.ceil(timeDiff / (1000 * 60 * 60 * 24));
-
-  // Mostrar el resultado
-  const resultElement = document.getElementById('result');
-  resultElement.textContent = `Faltan ${daysDiff} días para llegar a la carrera.`;
-  console.log("actualizarDiasRestantes function called");
-  }
-
-  // Crear dos nuevas instancias de HTMLVideoElement para cada sección
-  let Semana_1_video_1 = document.createElement("video");
-  let Semana_1_video_2 = document.createElement("video");
-  let Semana_2_video_3 = document.createElement("video");
-  let Semana_2_video_4 = document.createElement("video");
-
-  // Establecer las fuentes de video
-  Semana_1_video_1.src = "video 1.mp4"; // ruta de su primer video
-  Semana_1_video_2.src = "video 2.mp4"; // ruta de su segundo video
-  Semana_2_video_3.src = "video 3.mp4"; // ruta de su tercer video
-  Semana_2_video_4.src = "video 4.mp4"; // ruta de su cuarto video
-
-  // Establecer atributos de video
-  Semana_1_video_1.controls = true;
-  Semana_1_video_1.autoplay = false;
-  Semana_1_video_1.loop = false;
-
-  Semana_1_video_2.controls = true;
-  Semana_1_video_2.autoplay = false;
-  Semana_1_video_2.loop = false;
-
-  Semana_2_video_3.controls = true;
-  Semana_2_video_3.autoplay = false;
-  Semana_2_video_3.loop = false;
-
-  Semana_2_video_4.controls = true;
-  Semana_2_video_4.autoplay = false;
-  Semana_2_video_4.loop = false;
-
-  // Agregar los dos videos a cada sección
-  document.getElementById("Semana 1").appendChild(video1);
-  document.getElementById("Semana 1").appendChild(video2);
-  document.getElementById("Semana 2").appendChild(video3);
-  document.getElementById("Semana 2").appendChild(video4);
-
 });
