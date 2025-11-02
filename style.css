@@ -264,6 +264,13 @@ video {
   z-index: 1;
 }
 
+/* Permite ocultar la imagen decorativa en sub-containers específicos.
+   Añade la clase `no-image` al div `.sub-container` para que no muestre 2.jpg. */
+.sub-container.no-image h4::after {
+  background: none;
+  display: none;
+}
+
 .image-container {
   background-color: #fffdfd;
   text-align-last: left; 
