@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5'],
     datasets: [{
       label: 'Km recorridos en Semana 6',
-      data: [15, 14, 9, 19, 9],
+      data: [15, 16, 10, 9, 24],
       borderColor: 'rgba(75, 192, 192, 1)',
       fill: true,
       tension: 0.1,
@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const dataLine2 = {
     labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'],
     datasets: [{
-      label: 'Km recorridos en Semana 7',
-      data: [7, 12, 8, 50],
+      label: 'Km recorridos en Semana 9',
+      data: [11, 21, 8, 14, 13],
       borderColor: 'rgba(153, 102, 255, 1)',
       fill: true,
       tension: 0.1
@@ -39,7 +39,7 @@ document.addEventListener("DOMContentLoaded", function () {
   // --- Función de cuenta regresiva ---
  function actualizarDiasRestantes() {
   // Fecha objetivo fija
-  const objetivoDate = new Date('2026-02-22');
+  const objetivoDate = new Date('2026-03-14');
   const currentDate = new Date();
   const timeDiff = objetivoDate - currentDate;
   const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
