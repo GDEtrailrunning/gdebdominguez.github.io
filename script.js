@@ -4,10 +4,10 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // --- Datos ---
   const dataLine1 = {
-    labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4', 'Día 5'],
+    labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'],
     datasets: [{
-      label: 'Km recorridos en Semana 8',
-      data: [15, 16, 10, 9, 24],
+      label: 'Km recorridos en Semana 10',
+      data: [6, 7, 7, 42],
       borderColor: 'rgba(75, 192, 192, 1)',
       fill: true,
       tension: 0.1,
@@ -18,8 +18,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const dataLine2 = {
     labels: ['Día 1', 'Día 2', 'Día 3', 'Día 4'],
     datasets: [{
-      label: 'Km recorridos en Semana 9',
-      data: [9, 22, 8, 14, 13],
+      label: 'Km recorridos en Semana 11',
+      data: [15, 17, 20, 14],
       borderColor: 'rgba(153, 102, 255, 1)',
       fill: true,
       tension: 0.1
@@ -86,5 +86,4 @@ document.addEventListener("DOMContentLoaded", function () {
   document.getElementById("Semana 2").appendChild(video4);
 
 });
-
 
