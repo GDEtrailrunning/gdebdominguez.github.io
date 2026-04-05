@@ -253,9 +253,9 @@ video {
   content: "";
   position: absolute;
   right: 16px;
-  bottom: 12px;
+  bottom: 4px;
   width: 160px;   /* Aumenta el ancho de la imagen */
-  height: 120px;  /* Aumenta el alto de la imagen */
+  height: 110px;  /* Aumenta el alto de la imagen */
   background: url('2.jpg') no-repeat right bottom;
   background-size: contain;
   opacity: 0.9;
